@@ -1,0 +1,4 @@
+com\application\wallet\controller\WalletControllerTest.class
+com\application\wallet\TestWalletApplication.class
+com\application\wallet\WalletApplicationTests.class
+com\application\wallet\TestcontainersConfiguration.class

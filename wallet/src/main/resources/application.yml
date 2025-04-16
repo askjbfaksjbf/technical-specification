@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:wallet}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
+    hikari:
+      maximum-pool-size: ${DB_POOL_SIZE:50}
+      minimum-idle: ${DB_MIN_IDLE:10}
+      idle-timeout: 300000
+      connection-timeout: ${DB_TIMEOUT:10000}
+      max-lifetime: 1200000
+      auto-commit: false
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          batch_size: 50
+          fetch_size: 50
+        connection:
+          provider_disables_autocommit: true
+        generate_statistics: ${HIBERNATE_STATISTICS:false}
+    open-in-view: false
+  transaction:
+    default-timeout: 10s
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+
+server:
+  port: ${APP_PORT:8080}
+  tomcat:
+    threads:
+      max: ${SERVER_MAX_THREADS:200}
+      min-spare: ${SERVER_MIN_THREADS:20}
+    max-connections: ${SERVER_MAX_CONNECTIONS:8192}
+    accept-count: ${SERVER_ACCEPT_COUNT:100}
+    connection-timeout: ${SERVER_CONNECTION_TIMEOUT:20000} 

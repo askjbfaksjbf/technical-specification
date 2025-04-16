@@ -1,0 +1,11 @@
+com\application\wallet\exception\ErrorResponse.class
+com\application\wallet\dto\OperationType.class
+com\application\wallet\exception\InsufficientFundsException.class
+com\application\wallet\model\Wallet.class
+com\application\wallet\controller\WalletController.class
+com\application\wallet\repository\WalletRepository.class
+com\application\wallet\exception\GlobalExceptionHandler.class
+com\application\wallet\exception\WalletNotFoundException.class
+com\application\wallet\dto\WalletOperationRequest.class
+com\application\wallet\service\WalletService.class
+com\application\wallet\WalletApplication.class
